@@ -1,17 +1,19 @@
+import 'package:ask_project/answer.dart';
+import 'package:ask_project/question.dart';
 import 'package:flutter/material.dart';
 
 main() {
   runApp(AskProject());
 }
 
-class AskProjectState extends State<AskProject> {
-  int selectedQuestion = 0;
+class _AskProjectState extends State<AskProject> {
+  int _selectedQuestion = 0;
 
-  void answer() {
+  void _answer() {
     setState(() {
-      selectedQuestion++;
+      _selectedQuestion++;
     });
-    print(selectedQuestion);
+    print(_selectedQuestion);
   }
 
   @override
@@ -29,10 +31,10 @@ class AskProjectState extends State<AskProject> {
         ),
         body: Column(
           children: [
-            Text(questions[selectedQuestion]),
-            ElevatedButton(onPressed: answer, child: Text('Resposta 1')),
-            ElevatedButton(onPressed: answer, child: Text('Resposta 2')),
-            ElevatedButton(onPressed: answer, child: Text('Resposta 3')),
+            Question(questions[_selectedQuestion]),
+            Answer('Resposta 1', _answer),
+            Answer('Resposta 2', _answer),
+            Answer('Resposta 3', _answer),
           ],
         ),
       ),
@@ -41,7 +43,7 @@ class AskProjectState extends State<AskProject> {
 }
 
 class AskProject extends StatefulWidget {
-  AskProjectState createState() {
-    return AskProjectState();
+  _AskProjectState createState() {
+    return _AskProjectState();
   }
 }
