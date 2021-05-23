@@ -2,6 +2,8 @@
 
 A new Flutter project.
 
+<img src="https://i.imgur.com/KiDaKLU.png" width="130" height="270" />
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
